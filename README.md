@@ -93,15 +93,7 @@ php artisan migrate:fresh --seed
 
 ### Variables d'Environnement Backend
 ```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=opera_vf
-DB_USERNAME=root
-DB_PASSWORD=
 
-JWT_SECRET=votre-secret-jwt
-```
 
 ### Variables d'Environnement Frontend
 ```env
@@ -130,76 +122,6 @@ npm run build
 docker-compose up -d
 ```
 
-## 📱 Utilisation
-
-### Accès à l'Application
-1. **URL** : `http://localhost:3000`
-2. **Connexion** : Utilisez les identifiants par défaut ou créez un compte
-3. **Navigation** : Menu latéral pour accéder aux différentes sections
-
-### Premiers Pas
-1. **Dashboard** : Consultez les statistiques générales
-2. **Visiteurs** : Ajoutez et gérez vos prospects
-3. **Clients** : Consultez votre base clients
-4. **Abonnements** : Gérez les abonnements actifs
-5. **Rapports** : Analysez vos performances
-
-## 🔐 Sécurité
-
-- **Authentification JWT** : Sessions sécurisées
-- **Validation des données** : Côté client et serveur
-- **CSRF Protection** : Protection contre les attaques
-- **Sanitisation** : Nettoyage des entrées utilisateur
-- **Permissions** : Système de rôles et permissions
-
-## 📊 Structure du Projet
-
-```
-opera-vf/
-├── frontend/                 # Application React
-│   ├── src/
-│   │   ├── components/      # Composants réutilisables
-│   │   ├── pages/          # Pages de l'application
-│   │   ├── services/       # Services API
-│   │   └── styles/         # Styles CSS
-│   ├── public/             # Fichiers publics
-│   └── package.json
-├── backend/                 # API Laravel
-│   ├── app/
-│   │   ├── Http/           # Contrôleurs et Middleware
-│   │   ├── Models/         # Modèles Eloquent
-│   │   └── Services/       # Services métier
-│   ├── database/           # Migrations et Seeders
-│   ├── routes/             # Routes API
-│   └── composer.json
-└── README.md
-```
-
-## 🤝 Contribution
-
-1. **Fork** le projet
-2. **Créez** une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
-3. **Commitez** vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. **Poussez** vers la branche (`git push origin feature/AmazingFeature`)
-5. **Ouvrez** une Pull Request
-
-## 📝 Licence
 
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
-## 📞 Support
-
-- **Email** : support@opera-vf.com
-- **Documentation** : [docs.opera-vf.com](https://docs.opera-vf.com)
-- **Issues** : [GitHub Issues](https://github.com/votre-username/opera-vf/issues)
-
-## 🙏 Remerciements
-
-- **React Team** pour le framework frontend
-- **Laravel Team** pour le framework backend
-- **Tailwind CSS** pour le système de design
-- **Recharts** pour les visualisations
-
----
-
-**Développé avec ❤️ pour les clubs de fitness modernes** 
