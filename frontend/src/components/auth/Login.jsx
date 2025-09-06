@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import authService from '../../services/authService';
 
 // Schema de validation
 const loginSchema = yup.object({
@@ -70,10 +71,16 @@ const Login = () => {
     setError('');
     
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await authService.login(data);
+
       console.log('Données de connexion:', data);
-      // Navigation vers le dashboard après connexion réussie
-      navigate('/dashboard');
+      if(response.success) {
+         console.log('Connexion réussie:', response.data);
+        navigate('/dashboard');
+      }else{
+                setError(response.error);
+
+      }
     } catch (err) {
       setError('Erreur de connexion. Veuillez réessayer.');
     } finally {

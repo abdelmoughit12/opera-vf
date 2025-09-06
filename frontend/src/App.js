@@ -1,33 +1,34 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/auth/Login';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/sharedCompoents/Dashboard';
 import Clients from './components/pages/Clients';
+import ClientDetailsPage from './components/client/ClientDetailsPage';
 import Visitors from './components/pages/Visiteurs';
-import Subscriptions from './components/pages/Subscriptions';
 import Sales from './components/pages/Sales';
-import Payments from './components/pages/Payments';
-import Reports from './components/pages/Reports';
 import Settings from './components/pages/Settings';
+import EditClientModal from './components/client/edit/EditClientModal';
+import NotificationProvider from './components/common/NotificationProvider';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/subscriptions" element={<Subscriptions />} />
-          <Route path="/sales" element={<Sales />} />
-          <Route path="/payments" element={<Payments />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/visitors" element={<Visitors />} />
-        </Routes>
-      </div>
-    </Router>
+    <NotificationProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/client/:id" element={<ClientDetailsPage />} />
+            <Route path="/client/:id/edit" element={<EditClientModal />} />
+            <Route path="/sales" element={<Sales />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/visitors" element={<Visitors />} />
+          </Routes>
+        </div>
+      </Router>
+    </NotificationProvider>
   );
 }
 

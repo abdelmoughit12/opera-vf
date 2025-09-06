@@ -2,6 +2,7 @@
 export { default as authService } from './authService';
 export { default as operaService } from './operaService';
 export { default as userService } from './userService';
+export { default as ribService } from './ribService';
 
 // Configuration globale des services
 export const API_CONFIG = {
